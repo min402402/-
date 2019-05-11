@@ -18,7 +18,7 @@
     </script>
 </head>
 <body>
-<form method="post" action="member_ok.php" name="memform">
+<form method="post" action="gmember_ok.php" name="gmemform">
     <h1>회원가입 폼</h1>
     <fieldset>
         <legend>입력사항</legend>
@@ -39,16 +39,12 @@
                 <td><input type="text" size="35" name="name" placeholder="이름" required></td>
             </tr>
             <tr>
-                <td>자격번호</td>
-                <td><input type="text" size="35" name="drnum" placeholder="자격번호" required></td>
-            </tr>
-            <tr>
-                <td>차량번호</td>
-                <td><input type="text" size="35" name="carnum" placeholder="차량번호" required></td>
-            </tr>
-            <tr>
                 <td>핸드폰번호</td>
                 <td><input type="text" size="35" name="phnum" placeholder="핸드폰번호" required></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>남<input type="radio" name="sex" value="남"> 여<input type="radio" name="sex" value="여"></td>
             </tr>
         </table>
         <input type="submit" value="가입하기" /><input type="reset" value="다시쓰기" />

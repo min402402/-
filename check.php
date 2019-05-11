@@ -3,11 +3,15 @@
 include "data.php";
 $uid = $_GET["userid"];
 
-$sql = $pdo->prepare("SELECT * FROM driver WHERE id='".$uid."'");
+$sql = $pdo->prepare("SELECT id FROM driver WHERE id='$uid'");
 $sql->execute();
-$driver = $sql->setFetchMode(PDO::FETCH_ASSOC);
+$driver = $sql->fetch(PDO::FETCH_ASSOC);
 
-if($driver==0)
+$sql = $pdo->prepare("SELECT id FROM guest WHERE id='$uid'");
+$sql->execute();
+$guest = $sql->fetch(PDO::FETCH_ASSOC);
+
+if($driver==null&&$guest==null)
 {
     ?>
     <div><?php echo $uid; ?>는 사용가능한 아이디입니다.</div>
